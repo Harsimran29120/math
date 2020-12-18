@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="https://icon-library.com/images/math-icon/math-icon-27.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Grade Equation</title>
+</head>
+<body>
+    <h1 style="color: white;"><em>This is a second grade equation solver</em></h1>
+     <br>
+    <div id="list">
+    <input type="text" placeholder="Type a" id="firstvalue"> <h4 style="color: white;"> x&#178 + </h4>
+    <input type="text" placeholder="Type b" id="secondvalue"> <h4 style="color: white;">x + </h4>
+    <input type="text" placeholder="Type c" id="thirdvalue">
+    <button type="button" onclick="getInputValue();"><em><bold>Get Solution</bold></em></button>
+    </div>3
+    <h3 style="color: white;" id="Solution1"></h3><h3 style="color: white;" id="Solution1number"></h3>
+    <br>
+    <h3 style="color: white;" id="Solution2"></h3><h3 style="color: white;" id="Solution2number"></h3>
+    <h3 id="bottom">Made by Harsimran Singh</h3>
+    <style>
+        #list {
+           width: 50%;
+           display: flex;
+           justify-content: space-between;
+        }
+
+        body {
+           background-image: url("https://cdn.hipwallpaper.com/i/69/95/VsQRz6.jpg");
+        }
+
+        #bottom {
+            color: white;
+            position: absolute; bottom: 0; right: 1; 
+        }
+    </style>
+ 
+    <script>
+
+        function positive(a, b, c){
+            return (-b + Math.sqrt(Math.pow(b, 2) -4*a*c)) / 2*a
+        }
+
+        function negative(a, b, c){
+            return (-b - Math.sqrt(Math.pow(b, 2) -4*a*c)) / 2*a
+        }
+        
+        function getInputValue(){
+            
+            var a = document.getElementById("firstvalue").value;
+            var b = document.getElementById("secondvalue").value;
+            var c = document.getElementById("thirdvalue").value;
+            
+            x1= positive(a, b, c);
+            x2= negative(a, b, c);
+            console.log(x1, x2);
+            console.log("One solution is:", x1, ";", "The other solution is:", x2, ";")
+
+            Solution1.innerHTML = "The first solution is:";Solution1number.innerHTML = x1 ;
+            Solution2.innerHTML = "The second solution is:";Solution2number.innerHTML = x2 ;
+        }
+
+        //x1= positive(a, b, c);
+        //console.log(x1);
+        //x2= negative(1, -3, 2);
+
+        //console.log(x1, x2);
+        //console.log("One solution is:", x1, ";", "The other solution is:", x2, ";")
+
+    </script>
+</body>
+</html>
